@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Grocery Totaler</title>
+  <style>
+  html, body {
+    background-image: url('images/fog.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+
+
+  h1 {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    border: 5px solid black;
+    background-color:lightgrey;
+
+  }
+
+  #instructions {
+    color: black;
+    text-align: center;
+    padding:10px;
+    border:3px solid black;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color:lightgrey;
+    font-size: 17px;
+  }
+
+  p{
+    color:black;
+  }
+
+  .answer{
+    margin-left: 50px;
+    font-size: 25px;
+  }
+
+  input, label {
+    display:block;
+    margin: auto;
+    display: flex;
+    grid-row: 0 / 0;
+    grid-column: 0 / 0;
+    margin-bottom: 30px;
+  }
+
+  button {
+    margin: auto;
+    display: flex;
+    flex: 2;
+    flex-flow: row wrap;
+    margin-top: 10px;
+    padding: 5px
+  }
+
+  div {
+    margin-left: 150 px;
+  }
+
+
+  #tot {
+    color: black;
+    margin-left: 30px;
+  }
+  #finish {
+    flex: 2;
+  }
+
+  #label {
+    text-align: center;
+    margin: auto;
+  }
+
+  </style>
+   <script>
+   var a = 0;
+   var c = 0;
+   var e = 0;
+   var s = 0;
+
+   function addAshley() {
+     var textBox = document.querySelector('input').value;
+     var number = parseInt(textBox, 10)
+     a = a + number;
+     document.querySelector('input').value = '';
+     console.log('Ashley' + a);
+   }
+   function addCass() {
+     var textBox = document.querySelector('input').value;
+     var number = parseInt(textBox, 10)
+     c = c + number;
+     document.querySelector('input').value = '';
+     console.log('Cass' + c);
+   }
+   function addEd() {
+     var textBox = document.querySelector('input').value;
+     var number = parseInt(textBox, 10)
+     e = e + number;
+     document.querySelector('input').value = '';
+
+   }
+   function addSequoia() {
+     var textBox = document.querySelector('input').value;
+     var number = parseInt(textBox, 10)
+     s = s + number;
+     document.querySelector('input').value = '';
+   }
+
+   function finish() {
+     document.querySelector('#ashTotal').innerHTML =
+       'Ashley owes $'+(a/100)
+     document.querySelector('#cassTotal').innerHTML =
+       'Cass owes $'+(c/100);
+     document.querySelector('#edTotal').innerHTML =
+        'Ed owes $'+(e/100);
+     document.querySelector('#seqTotal').innerHTML =
+       'Sequoia owes $'+(s/100);
+
+   }
+   </script>
+
+</head>
+<body>
+  <h1>
+    The 717 Grocery Totaler
+  </h1>
+  <h2>
+    Welcome to the Grocery Totaler
+  </h2>
+  <p id = 'instructions'>
+    The instructions are simple: enter the amount of each item
+     (with no decimal and no dollar sign) into the box, then click whose expense it is.
+     When you're done, just click the 'Done!' button and totals for each person will show below. If you need to reverse an
+     entry, just enter a negative number to subtract the mistake
+  </p>
+  <p id = 'label'>
+    Enter amounts here:
+  </p>
+  <div>
+  <input type = 'number' id = 'box'>
+  </div>
+  <button onclick = 'addAshley();'>
+    Add to Ashley total
+  </button>
+  <button onclick = 'addCass();'>
+    Add to Cass total
+  </button>
+  <button onclick = 'addEd();'>
+    Add to Ed total
+  </button>
+  <button onclick = 'addSequoia();'>
+    Add to Sequoia total
+  </button>
+  <button onclick = 'finish();', id = 'finish'>
+    Done!
+  </button>
+  <h2 id = 'tot'>
+    Totals
+  </h2>
+    <p class = 'answer', id = 'ashTotal'>
+    </p>
+    <p class = 'answer', id = 'cassTotal'>
+    </p>
+    <p class = 'answer', id = 'edTotal'>
+    </p>
+    <p class = 'answer', id = 'seqTotal'>
+    </p>
+</body>
+</html>

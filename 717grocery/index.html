@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Grocery Totaler</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+   <script src="script.js"></script>
+</head>
+<body>
+  <h1>
+    The 717 Grocery Totaler
+  </h1>
+  <h2>
+    Welcome to the Grocery Totaler
+  </h2>
+  <p id = 'instructions'>
+    The instructions are simple: enter the amount of each item
+     (with no decimal and no dollar sign) into the box, then click whose expense it is.
+     When you're done, just click the 'Done!' button and totals for each person will show below. If you need to reverse an
+     entry, just enter a negative number to subtract the mistake
+  </p>
+  <p id = 'label'>
+    Enter amounts here:
+  </p>
+  <div>
+  <input type = 'number' id = 'box'>
+  </div>
+  <button onclick = 'addAshley();'>
+    Add to Ashley total
+  </button>
+  <button onclick = 'addCass();'>
+    Add to Cass total
+  </button>
+  <button onclick = 'addEd();'>
+    Add to Ed total
+  </button>
+  <button onclick = 'addSequoia();'>
+    Add to Sequoia total
+  </button>
+  <button onclick = 'finish();', id = 'finish'>
+    Done!
+  </button>
+  <h2 id = 'tot'>
+    Totals
+  </h2>
+    <p class = 'answer', id = 'ashTotal'>
+    </p>
+    <p class = 'answer', id = 'cassTotal'>
+    </p>
+    <p class = 'answer', id = 'edTotal'>
+    </p>
+    <p class = 'answer', id = 'seqTotal'>
+    </p>
+</body>
+</html>
